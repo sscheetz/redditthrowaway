@@ -1,0 +1,46 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">"Reddit Is Dumb"Tube</h1>
+</div>
+<!--Maybe can't find path outside of static resources. just load from s3.-->
+@foreach (var video in Model.Videos)
+{
+<div style="display: inline-block">
+    <!-- Don't want to have to upload a ton of videos to prove a point. -->
+    <div>@video.Title</div> <!-- can easily href this to display on a different page with comments-->
+    <video width="250" height="240" controls>
+        <source src="@video.S3Url" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<div style="display: inline-block">
+    <!-- Don't want to have to upload a ton of videos to prove a point. -->
+    <div>@video.Title</div>
+    <video width="250" height="240" controls>
+        <source src="@video.S3Url" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<div style="display: inline-block">
+    <!-- Don't want to have to upload a ton of videos to prove a point. -->
+    <div>@video.Title</div>
+    <video width="250" height="240" controls>
+        <source src="@video.S3Url" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<div style="display: inline-block">
+    <!-- Don't want to have to upload a ton of videos to prove a point. -->
+    <div>@video.Title</div>
+    <video width="250" height="240" controls>
+        <source src="@video.S3Url" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+</div>
+}
